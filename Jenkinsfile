@@ -18,10 +18,7 @@ pipeline {
 
         stage('Package code') {
             steps {
-                zip zipFile: 'myapp.zip', 
-                    dir: '.', 
-                    glob: '**/*.*', 
-                    exclude: '**/*.git*'
+                 sh '7z a myapp.zip "**/**" -x!*.git*'
              }
         }
 
