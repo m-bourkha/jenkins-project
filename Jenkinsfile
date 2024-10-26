@@ -18,10 +18,10 @@ pipeline {
 
         stage('Package code') {
             steps {
-                sh '''
-                zip -r myapp.zip ./* -x "*.git*"
-                sh ls -lart
-                '''
+                zip zipFile: 'myapp.zip', 
+                    dir: '.', 
+                    glob: '**/*.*', 
+                    exclude: '**/*.git*'
             }
         }
 
