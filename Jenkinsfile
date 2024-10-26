@@ -22,7 +22,7 @@ pipeline {
                     dir: '.', 
                     glob: '**/*.*', 
                     exclude: '**/*.git*'
-            }
+             }
         }
 
         stage('Deploy to Prod') {
